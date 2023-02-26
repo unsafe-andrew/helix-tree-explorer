@@ -49,20 +49,18 @@ impl FileInfo {
     }
 
     fn get_text(&self) -> Cow<'static, str> {
-        match self.file_type {
-            FileType::Root => format!("{}", self.path.display()).into(),
-            FileType::File | FileType::Folder => {
-                let name: String = self
-                    .path
-                    .file_name()
-                    .map_or("/".into(), |p| p.to_string_lossy().into_owned().into());
+        let text = match self.file_type {
+            FileType::Root => format!("{}", self.path.display()),
+            FileType::File | FileType::Folder => self
+                .path
+                .file_name()
+                .map_or("/".into(), |p| p.to_string_lossy().into_owned()),
+        };
 
-                #[cfg(test)]
-                let name = name.replace(std::path::MAIN_SEPARATOR, "/");
+        #[cfg(test)]
+        let text = text.replace(std::path::MAIN_SEPARATOR, "/");
 
-                name.into()
-            }
-        }
+        text.into()
     }
 }
 
