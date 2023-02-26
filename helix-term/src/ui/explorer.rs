@@ -1053,7 +1053,7 @@ mod test_explorer {
 
         // 2. Rename the current file into an existing folder
         explorer
-            .rename_current(&path.join("styles/lol").to_string_lossy().into())
+            .rename_current(&path.join("styles").join("lol").to_string_lossy().into())
             .unwrap();
 
         // 2a. Expect the file is moved to the folder, and is focused
