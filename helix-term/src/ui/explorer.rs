@@ -51,10 +51,17 @@ impl FileInfo {
     fn get_text(&self) -> Cow<'static, str> {
         match self.file_type {
             FileType::Root => format!("{}", self.path.display()).into(),
-            FileType::File | FileType::Folder => self
-                .path
-                .file_name()
-                .map_or("/".into(), |p| p.to_string_lossy().into_owned().into()),
+            FileType::File | FileType::Folder => {
+                let name: String = self
+                    .path
+                    .file_name()
+                    .map_or("/".into(), |p| p.to_string_lossy().into_owned().into());
+
+                #[cfg(test)]
+                let name = name.replace(std::path::MAIN_SEPARATOR, "/");
+
+                name.into()
+            }
         }
     }
 }
@@ -197,8 +204,7 @@ impl Explorer {
 
     fn new_tree_view(root: PathBuf) -> Result<TreeView<FileInfo>> {
         let root = FileInfo::root(root);
-        let children = root.get_children()?;
-        Ok(TreeView::build_tree(root, children).with_enter_fn(Self::toggle_current))
+        Ok(TreeView::build_tree(root)?.with_enter_fn(Self::toggle_current))
     }
 
     fn push_history(&mut self, tree_view: TreeView<FileInfo>) {
@@ -922,7 +928,7 @@ mod test_explorer {
             }
             ".gitignore" => file!("")
         });
-        let path: PathBuf = format!("test-explorer/{}", name).into();
+        let path: PathBuf = format!("test-explorer{}{}", std::path::MAIN_SEPARATOR, name).into();
         if path.exists() {
             fs::remove_dir_all(path.clone()).unwrap();
         }
