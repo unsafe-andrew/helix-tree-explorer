@@ -2,9 +2,11 @@ name: Build
 on:
   pull_request:
   push:
+    branches:
+      - master
   merge_group:
   schedule:
-    - cron: "00 01 * * *"
+    - cron: '00 01 * * *'
 
 jobs:
   check:
@@ -105,3 +107,4 @@ jobs:
           git diff-files --quiet \
             || (echo "Run 'cargo xtask docgen', commit the changes and push again" \
             && exit 1)
+
