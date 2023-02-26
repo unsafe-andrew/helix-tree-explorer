@@ -225,7 +225,11 @@ impl Explorer {
     fn reveal_file(&mut self, path: PathBuf) -> Result<()> {
         let current_root = &self.state.current_root;
         let current_path = path.as_path().to_string_lossy().to_string();
-        let current_root = current_root.as_path().to_string_lossy().to_string() + "/";
+        let current_root = format!(
+            "{}{}",
+            current_root.as_path().to_string_lossy(),
+            std::path::MAIN_SEPARATOR
+        );
         let segments = {
             let stripped = match current_path.strip_prefix(current_root.as_str()) {
                 Some(stripped) => Ok(stripped),
@@ -235,7 +239,10 @@ impl Explorer {
                         .ok_or_else(|| anyhow::anyhow!("Failed get parent of '{current_path}'"))?;
                     self.change_root(parent.into())?;
                     current_path
-                        .strip_prefix((parent.to_string_lossy().to_string() + "/").as_str())
+                        .strip_prefix(
+                            format!("{}{}", parent.to_string_lossy(), std::path::MAIN_SEPARATOR)
+                                .as_str(),
+                        )
                         .ok_or_else(|| {
                             anyhow::anyhow!(
                                 "Failed to strip prefix (parent) '{}' from '{}'",
