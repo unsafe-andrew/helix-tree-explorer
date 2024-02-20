@@ -65,6 +65,16 @@
 (function_capture module: (atom) @namespace)
 (function_capture function: (atom) @function)
 
+; Macros
+(macro
+  "?"+ @constant
+  name: (_) @constant
+  !arguments)
+
+(macro
+  "?"+ @keyword.directive
+  name: (_) @keyword.directive)
+
 ; Ignored variables
 ((variable) @comment.discard
  (#match? @comment.discard "^_"))
@@ -125,16 +135,6 @@
 (unary_operator operator: _ @operator)
 ["/" ":" "->"] @operator
 
-; Macros
-(macro
-  "?"+ @constant
-  name: (_) @constant
-  !arguments)
-
-(macro
-  "?"+ @keyword.directive
-  name: (_) @keyword.directive)
-
 ; Comments
 (tripledot) @comment.discard
 
@@ -145,8 +145,9 @@
 ((atom) @constant.builtin.boolean
  (#match? @constant.builtin.boolean "^(true|false)$"))
 (atom) @string.special.symbol
-(string) @string
+[(string) (sigil)] @string
 (character) @constant.character
+(escape_sequence) @constant.character.escape
 
 (integer) @constant.numeric.integer
 (float) @constant.numeric.float

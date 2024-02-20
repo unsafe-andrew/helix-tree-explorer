@@ -1,12 +1,28 @@
-                  _   _                 __    __
-                 | | | |         _      \ \  / /
-                 | |_| |   ___  | | (_)  \ \/ /
-                 |  _  |  / _ \ | |  _    )  (
-                 | | | | |  __/ | | | |  / /\ \
-                 |_| |_|  \___| |_| |_| /_/  \_\
 
-                 A post-modern modal text editor.
-_________________________________________________________________
+
+       .
+       ###x.        .|
+       d#####x,   ,v||
+        '+#####v||||||
+           ,v|||||+'.      _     _           _
+        ,v|||||^'>####    | |   | |   ___   | | (_) __  __
+       |||||^'  .v####    | |___| |  /   \  | |  _  \ \/ /
+       ||||=..v#####P'    |  ___  | /  ^  | | | | |  \  /
+       ''v'>#####P'       | |   | | |  ---  | | | |  /  \
+       ,######/P||x.      |_|   |_|  \___/  |_| |_| /_/\_\
+       ####P' "x|||||,
+       |/'       'x|||    A post-modern modal text editor.
+        '           '|
+
+
+                 Welcome to the Helix tutorial!
+        Press the j key until you reach the introduction.
+
+
+
+=================================================================
+=                        INTRODUCTION                           =
+=================================================================
 
  Welcome to the Helix editor! Helix is different from editors
  you might be used to in that it is modal, meaning that it has
@@ -18,6 +34,12 @@ _________________________________________________________________
  use of Helix's modal editing features. To begin, ensure your
  CapsLock key is not pressed and hold the j key until you reach
  the first lesson.
+
+
+
+
+
+
 
 
 =================================================================
@@ -48,13 +70,13 @@ _________________________________________________________________
 
  1. Type : to enter Command mode. Your cursor will
     move to the bottom of the screen.
- 2. Type q or quit and type Enter to exit Helix.
+ 2. Type q or quit and press Enter to exit Helix.
 
  Note: The quit command will fail if there are unsaved changes.
        To force quit and DISCARD these changes, type q! or quit!.
        You will learn how to save files later.
 
- To exit Command mode without entering a command, type Escape.
+ To exit Command mode without entering a command, press Escape.
 
  Now, move on to the next lesson.
 
@@ -96,7 +118,7 @@ _________________________________________________________________
  2. Move to a place in the line which is missing text and type
     i to enter Insert mode. Keys you type will now type text.
  3. Enter the missing text.
- 4. Type Escape to exit Insert mode and return to Normal mode.
+ 4. Press Escape to exit Insert mode and return to Normal mode.
  5. Repeat until the line matches the line below it.
 
  --> Th stce misg so.
@@ -119,7 +141,7 @@ _________________________________________________________________
  2. Open a file in Helix by running: hx FILENAME
  3. Make some edits to the file.
  4. Type : to enter Command mode.
- 5. Type w or write, and type Enter to save the file.
+ 5. Type w or write, and press Enter to save the file.
 
  You can also type wq or write-quit to save and exit.
 
@@ -145,7 +167,7 @@ _________________________________________________________________
 
  * Type d to delete the character at the cursor.
 
- * Type i to enter Insert mode and type text. Type Escape to
+ * Type i to enter Insert mode and type text. Press Escape to
    return to Normal mode.
 
 
@@ -469,7 +491,7 @@ _________________________________________________________________
  Type N to go to the previous search match.
 
  1. Type / and type in a common word, like 'banana'.
- 2. Type Enter to confirm the search.
+ 2. Press Enter to confirm the search.
  3. Use n and N to cycle through the matches.
 
  Searching uses regular expressions, allowing you to target more
@@ -524,7 +546,7 @@ _________________________________________________________________
  --> Fix th two nes at same ime.
      Fix these two lines at the same time.
 
- Note: Type Alt-C to do the same above the cursor.
+ Note: Press Alt-C to do the same above the cursor.
 
 =================================================================
 =                    5.2 THE SELECT COMMAND                     =
@@ -535,11 +557,11 @@ _________________________________________________________________
  1. Move the cursor to the line marked '-->' below.
  2. Type x to select the line.
  3. Type s. A prompt will appear.
- 4. Type 'apples' and type Enter. Both occurrences of
+ 4. Type 'apples' and press Enter. Both occurrences of
     'apples' in the line will be selected.
  5. You can now type c and change 'apples' to something else,
     like 'oranges'.
- 6. Type Escape to exit Insert mode.
+ 6. Press Escape to exit Insert mode.
  7. Type , to remove the second cursor.
 
  --> I like to eat apples since my favorite fruit is apples.
@@ -558,7 +580,7 @@ _________________________________________________________________
  1. Move the cursor to the line marked '-->' below.
  2. Select the line with x and then type s.
  3. Type '  +' to select any amount of consecutive spaces >1,
-    then type Enter.
+    then press Enter.
  4. Type c and change the matches to single spaces.
 
  --> This  sentence has   some      extra spaces.
@@ -596,11 +618,11 @@ _________________________________________________________________
 =                 5.5 SPLIT SELECTION INTO LINES                =
 =================================================================
 
- Type Alt-s to split the selection(s) on newlines.
+ Press Alt-s to split the selection(s) on newlines.
 
  1. Move the cursor to the first row of the table below.
  2. Select the entire table with 6x.
- 3. Type Alt-s to split into selections at each line.
+ 3. Press Alt-s to split into selections at each line.
  4. Align the table with &.
 
     | FRUIT   | AMOUNT |
@@ -626,7 +648,7 @@ _________________________________________________________________
 
  * Type & to align selections.
 
- * Type Alt-s to split the selection into lines.
+ * Press Alt-s to split the selection into lines.
 
 
 
@@ -685,7 +707,7 @@ _________________________________________________________________
 =================================================================
 
  Type . to repeat the last insert command.
- Type Alt-. to repeat the last f / t selection.
+ Press Alt-. to repeat the last f / t selection.
 
  1. Move the cursor to the line marked '-->' below.
  2. Make a change, insertion or appendage and repeat it with . .
@@ -712,7 +734,7 @@ _________________________________________________________________
  * Type r to replace selected characters.
 
  * Type . to repeat the last insertion.
-   * Type Alt-. to repeat the last f / t selection.
+   * Press Alt-. to repeat the last f / t selection.
 
 
 
@@ -772,11 +794,11 @@ lines.
 =                      7.3 INDENTING LINES                      =
 =================================================================
 
- Type > to indent a line and < to outdent it.
+ Type > to indent a line and < to unindent it.
 
  1. Move the cursor to the line marked '-->' below.
  2. Move down to the second line and type > to indent it.
- 3. Move to the third line and type < to outdent it.
+ 3. Move to the third line and type < to unindent it.
 
  --> These lines
     are indented
@@ -794,13 +816,13 @@ lines.
 =               7.4 INCREMENTING AND DECREMENTING               =
 =================================================================
 
- Type Ctrl-a to increment the number under selection.
- Type Ctrl-x to decrement the number under selection.
+ Press Ctrl-a to increment the number under selection.
+ Press Ctrl-x to decrement the number under selection.
 
  1. Move the cursor to the third line marked '-->' below.
- 2. Type Ctrl-a to increment the second point marked 2.
+ 2. Press Ctrl-a to increment the second point marked 2.
  3. Repeat for the point marked 3.
- 4. Move to the last point and type Ctrl-x to decrement the 6.
+ 4. Move to the last point and press Ctrl-x to decrement the 6.
 
  --> 1) First point.
  --> 2) Added point.
@@ -808,8 +830,8 @@ lines.
  --> 3) Another point.
  --> 6) Last point.
 
- Note: If there isn't a number under the selection the cursor
-       will jump to the next number in the line and act on it.
+
+
 
 
 =================================================================
@@ -820,10 +842,10 @@ lines.
 
  * Type J to join lines in selection.
 
- * Type < and > to indent / outdent lines.
+ * Type > and < to indent / unindent lines.
 
- * Type Ctrl-a to increment the selected number.
-   * Type Ctrl-x to decrement the selected number.
+ * Press Ctrl-a to increment the selected number.
+   * Press Ctrl-x to decrement the selected number.
 
 
 
@@ -919,7 +941,7 @@ lines.
  --> A horse is a horse, of course, of course,
  --> And no one can talk to a horse of course.
 
- Note: * is like a shorthand for "/ y as all it really does is
+ Note: * is like a shorthand for "/y as all it really does is
        copy the selection into the / register.
 
 =================================================================
@@ -952,15 +974,15 @@ lines.
  searching or jumping to the definition of a function in code. It
  stores these in what's called the jumplist.
 
- Type Ctrl-s to manually save your current position to
+ Press Ctrl-s to manually save your current position to
  the jumplist.
 
- Type Ctrl-i ("in") and Ctrl-o ("out") to move forward and
+ Press Ctrl-i ("in") and Ctrl-o ("out") to move forward and
  backwards in the jumplist respectively.
 
- 1. Type Ctrl-s somewhere.
+ 1. Press Ctrl-s somewhere.
  2. Move far away in the file.
- 3. Type Ctrl-o (just once!) to come back to where you saved.
+ 3. Press Ctrl-o (just once!) to come back to where you saved.
 
 
 
@@ -972,11 +994,11 @@ lines.
 
  * Type * to set the search register to the primary selection.
 
- * Type n / N in Visual mode to add selections on each search
+ * Type n / N in Select mode to add selections on each search
    match.
 
- * Type Ctrl-s to save position to the jumplist.
-   * Type Ctrl-i and Ctrl-o to go forward and backward in the
+ * Press Ctrl-s to save position to the jumplist.
+   * Press Ctrl-i and Ctrl-o to go forward and backward in the
      jumplist.
 
 
@@ -995,7 +1017,7 @@ lines.
  Type ) and ( to cycle the primary selection forward and backward
  through selections respectively.
 
- Type Alt-, to remove the primary selection.
+ Press Alt-, to remove the primary selection.
 
  1. Move the cursor to the line marked '-->' below.
  2. Select both lines with xx or 2x.
@@ -1014,7 +1036,7 @@ lines.
 =             10.2 CYCLING THE CONTENT OF SELECTIONS            =
 =================================================================
 
- Type Alt-) and Alt-( to cycle the content of the selections
+ Press Alt-) and Alt-( to cycle the content of the selections
  forward and backward respectively.
 
  1. Move the cursor to the line marked '-->' below.
@@ -1038,7 +1060,7 @@ lines.
 
  Type ~ to switch the case of all selected letters.
  Type ` to set all selected letters to lowercase.
- Type Alt-` to set all selected letters to uppercase.
+ Press Alt-` to set all selected letters to uppercase.
 
  1. Move the cursor to the first line marked '-->' below.
  2. Select each wrongly capitalised or lowercase letter
@@ -1048,7 +1070,7 @@ lines.
  5. Type ` to change the line to lowercase.
  6. Move to the third line marked '-->'.
  7. Type x to select the line.
- 8. Type Alt-` to change the line to uppercase.
+ 8. Press Alt-` to change the line to uppercase.
 
  --> thIs sENtencE hAs MIS-cApitalIsed leTTerS.
  --> this SENTENCE SHOULD all be in LOWERCASE.
@@ -1065,10 +1087,10 @@ lines.
  3. Type S then \. |! Enter (note the spaces after . and !).
     This effectively splits the selection into sentences at each
     dot or exclamation mark.
- 4. Type Alt-; to reverse the selections.
+ 4. Press Alt-; to reverse the selections.
  5. Type ; to reduce selections to a single character - the first
     letter of each sentence.
- 6. Type Alt-` to convert all selected letters to uppercase.
+ 6. Press Alt-` to convert all selected letters to uppercase.
 
 ---
 these are sentences. some sentences don't start with uppercase
@@ -1082,8 +1104,8 @@ letters! that is not good grammar. you can fix this.
 
  * Use ) and ( to cycle the primary selection back and forward
    through selections respectively.
-   * Type Alt-, to remove the primary selection.
-   * Type Alt-) and Alt-( to cycle the content of the selections.
+   * Press Alt-, to remove the primary selection.
+   * Press Alt-) and Alt-( to cycle the content of the selections.
 
  * Type ~ to alternate case of selected letters.
    * Use ` and Alt-` to set the case of selected letters to
@@ -1102,7 +1124,7 @@ letters! that is not good grammar. you can fix this.
 =                     11.1 COMMENTING A LINE                    =
 =================================================================
 
-Type Ctrl-c to comment the line under your cursor.
+Press Ctrl-c to comment the line under your cursor.
 To uncomment the line, press Ctrl-c again.
 
 1. Move your cursor to the line marked '-->' below.
@@ -1124,13 +1146,13 @@ To uncomment the line, press Ctrl-c again.
 =                 11.2 COMMENTING MULTIPLE LINES                =
 =================================================================
 
-Using the selections and multi-cursor functionality, you can 
+Using the selections and multi-cursor functionality, you can
 comment multiple lines as long as it is under the selection or
-cursors. 
+cursors.
 
 1. Move your cursor to the line marked with '-->' below.
-2. Now try to select or add more cursors the other lines marked 
-   with '-->'. 
+2. Now try to select or add more cursors the other lines marked
+   with '-->'.
 3. Comment those lines.
 
 --> How many are you going to comment?
@@ -1146,9 +1168,9 @@ multiple cursors, they won't be uncommented but commented again.
 =                       CHAPTER 11 RECAP                        =
 =================================================================
 
- * Use Ctrl-c to comment a line under your cursor. Type Ctrl-c
+ * Use Ctrl-c to comment a line under your cursor. Press Ctrl-c
    again to uncomment.
- * To comment multiple lines, use the selections 
+ * To comment multiple lines, use the selections
    and multi-cursors before typing Ctrl-c.
    * Commented lines cannot be uncommented but commented again.
 
@@ -1160,6 +1182,160 @@ multiple cursors, they won't be uncommented but commented again.
 
 
 
+
+
+
+
+=================================================================
+=                   12.1 USING MATCH MODE JUMP                  =
+=================================================================
+
+To switch to match mode from normal mode, type m. This feature
+is particularly useful for handling bracket pairs and their
+contents.
+
+There are several actions that can be performed in match mode,
+as indicated by the help pop-up. To jump to a matching bracket pair,
+simply press mm. For example on the lines below (starting with
+-->), move the cursor in normal mode to (, and then press mm to jump
+to the matching ). You can do the same on the line below: for example
+move to ], and press mm to jump to [ .
+
+--> you can (jump between matching parenthesis)
+--> or between matching [ square brackets ]
+--> now { you know the drill: this works with brackets too }
+
+
+
+
+=================================================================
+=                   12.2 USING MATCH MODE SELECT INSIDE         =
+=================================================================
+
+Match mode also lets you select the "inside" content between a
+pair of brackets or other delimiters. In the lines below:
+
+- move to the --> line, put your cursor in normal mode at any
+location between the parenthesis, for example at 'x', and press
+mi( or mi) to select the whole content inside the parenthesis
+(parenthesis excluded). As usual, you can then do anything you want
+with the selection (for example, press c to change it)
+
+--> outside and (inside x parenthesis) - and outside again
+
+Test below that you can do the same with [], or {}, or with
+nested combinations of these (this will act on the immediately
+surrounding matching pair). This also works with "" and similar
+
+--> test [ with square brackets ] !
+--> try ( with nested [ pairs of ( parenthesis) and "brackets" ])
+
+=================================================================
+=                   12.3 USING MATCH MODE SELECT AROUND         =
+=================================================================
+
+You can also select the "around" content, i.e. both the inside
+content and the delimiters themselves, by using the ma select.
+For example, move to the line under, move your cursor in normal
+mode to any position between the (), and select the content of
+the (), including the surrounding (), by typing ma( or ma). As
+usual, you can do anything you want with the selection, for
+example delete it all with ma(d .
+
+--> you ( select x around ) to include delimiters in the select
+
+This naturally works with other delimiters too:
+
+--> try [ with 'square' brackets ] too!
+
+
+
+
+
+=================================================================
+=                   12.4 USING MATCH MODE SURROUND              =
+=================================================================
+
+The match mode can also be used to add surrounding around the
+current selection. For example, move to the line below, then:
+ * i) select the "select all of this" line segment (for example,
+move in normal mode the cursor to the start of select, then enter
+selection mode with v , then select the 4 next words with 4e ),
+ * ii) press ms( or ms) to surround the selection with a pair of
+parenthesis.
+
+--> so, select all of this, and surround it with ()
+
+You can do the same with other delimiters: for example, ms' on
+WORD below to surround it with a pair of ''. You can try also
+with adding a surrounding pair of "", or {}, or [].
+
+--> surround this WORD !
+
+
+
+=================================================================
+=                   12.5 USING MATCH MODE DELETE SURROUND       =
+=================================================================
+
+You can delete surrounding pair of delimiters with the md
+command. On the line below, move the cursor anywhere
+within the pair of (), for example to the 'x', then from there,
+in normal mode, press md( or md) to delete the surrounding
+pair of parenthesis.
+
+--> delete (the x pair of parenthesis) from within!
+
+You can naturally delete other kinds of surroundings:
+
+--> delete (nested [delimiters]): "this" will delete the nearest
+matching surrounding pair.
+--> delete "layers "of" quote marks" too: this will delete the
+nearest previous and following quote marks
+
+Trying to delete unexisting surrounding delimiters print an error
+at the bottom bar and does nothing.
+
+=================================================================
+=                   12.6 USING MATCH MODE REPLACE SURROUND      =
+=================================================================
+
+You can replace surrounding pairs of delimiters with the mr
+command. On the line below, move the cursor to
+anywhere within the pair of (), for example on the 'x', then in
+normal mode, press mr([ to replace the pair of () with a pair
+of [].
+
+--> replace the (pair from x within), with something else
+
+This command will act on the closest enclosing pair, so you
+can try replacing different surrounding in the following:
+
+--> some (nested surroundings [can be replaced])
+--> this "works with 'other surroundings' too"
+
+You can try to replace a non existing pair: this will show
+an error warning at the bottom bar and do nothing.
+
+
+=================================================================
+=                     CHAPTER 12 RECAP                       =
+=================================================================
+
+You can enter the match mode with the m key; this will show the
+actions available in a popup. This will allow you to:
+ * jump to matching pair of delimiters with mm (you must have a
+ delimiter belonging to a pair under your cursor)
+ * select inside a pair of delimiters surrounding your cursor
+ (i.e. select the content but not the delimiters) with mi(
+ and similar
+ * select around a pair of delimiters surrounding your cursor
+ (i.e. select the content and the delimiters) with ma( and
+ similar
+ * delete surrounding delimiters with md( and similar
+ * add surrounding delimiters around the selection with ms(
+ * replace a pair of delimiters surrounding your selection with
+ mr([ to replace for example surrounding () with []
 
 
 
